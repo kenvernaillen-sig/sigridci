@@ -1,29 +1,29 @@
-function toggleAccordion(element, event) {
+function toggleAccordion(element) {
     var content = element.nextElementSibling;
     var header = element;
     
-    if (element.classList.contains('page')) { // if a sub-header was clicked
-        content = element.parentElement; // the parent div.menu-content
-        header = content.previousElementSibling; // the preceding div.menu-header
-        event.preventDefault(); // prevent the default link behavior
-        window.location.href = element.href; // manually navigate to the link's href
+    // Check if a sub-header was clicked
+    if (element.classList.contains('page')) {
+        content = element.parentElement; // The parent div.menu-content
+        header = content.previousElementSibling; // The preceding div.menu-header
     }
     
-    // hide all menu contents
+    // Hide all menu contents
     var allMenuContents = document.querySelectorAll('#accordionMenu .menu-item .menu-content');
     allMenuContents.forEach(function(menuContent) {
-        if (menuContent !== content) { // Don't hide the clicked section
+        // Don't hide the clicked section or its parent section
+        if (menuContent !== content && menuContent.parentElement !== content.parentElement) {
             menuContent.style.maxHeight = null;
-            menuContent.parentElement.classList.remove('active');
+            menuContent.previousElementSibling.classList.remove('active');
         }
     });
     
-    // show or hide the clicked menu content
-    if (content.style.maxHeight){
+    // Show or hide the clicked menu content
+    if (content.style.maxHeight) {
         content.style.maxHeight = null;
-        header.parentElement.classList.remove('active');
+        header.classList.remove('active');
     } else {
         content.style.maxHeight = content.scrollHeight + "px";
-        header.parentElement.classList.add('active');
+        header.classList.add('active');
     }
 }
