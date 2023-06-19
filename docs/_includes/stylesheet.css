@@ -157,20 +157,12 @@ td, th {
     font-size: 14px;
 }
 
-/* CSS */
-.accordion-content {
+#accordionMenu .menu-item .menu-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
 
-.accordion-header {
-    cursor: pointer;
-    /* Add more styles as needed */
+#accordionMenu .menu-item .menu-content.active {
+    max-height: 500px; /* adjust this value according to your needs */
 }
-
-.accordion-header.active,
-.accordion-content.active {
-    /* Add styles for active state here */
-}
-
