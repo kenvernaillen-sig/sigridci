@@ -1,6 +1,6 @@
 /* JavaScript */
 // Get all accordion headers
-var acc = document.getElementsByClassName("accordion-header");
+var acc = document.getElementsByClassName("category");
 
 for (var i = 0; i < acc.length; i++) {
     // When an accordion header is clicked
