@@ -162,6 +162,11 @@ td, th {
     color: #DFC101;
 }
 
+#accordionMenu .menu-item .menu-header {
+    /* Add your styles for the active header here */
+    color: #DFC101;
+}
+
 #accordionMenu .menu-item.active .menu-content {
     /* Add your styles for the active content here */
     color: #DFC101;
