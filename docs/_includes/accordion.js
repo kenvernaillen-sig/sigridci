@@ -28,7 +28,7 @@ for (var i = 0; i < acc.length; i++) {
 }
 
 // Get all main page links
-var mainLinks = document.getElementsByClassName("main-link");
+var mainLinks = document.getElementsByClassName("page");
 
 for (var i = 0; i < mainLinks.length; i++) {
     // When a main page link is clicked
