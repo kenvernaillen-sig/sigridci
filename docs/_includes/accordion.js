@@ -7,7 +7,7 @@ for (var i = 0; i < mainLinks.length; i++) {
         e.preventDefault();
 
         // Remove active class from other headers and content
-        var active = document.querySelector(".accordion .active");
+        var active = document.querySelector(".toc .active");
         if (active) {
             active.classList.remove("active");
             var activeContent = active.nextElementSibling;
