@@ -1,5 +1,6 @@
 function toggleAccordion(element) {
-    var item = element.parentNode;
+    var item = element.classList.contains('menu-header') ? 
+        element.parentNode : element.parentNode.parentNode;
 
     var items = Array.from(document.querySelectorAll('.menu-item'));
     items.forEach(function(i) {
@@ -10,8 +11,7 @@ function toggleAccordion(element) {
     });
 
     if (item.classList.contains('active')) {
-        item.classList.remove('active');
-        item.querySelector('.menu-content').style.maxHeight = null;
+        item.querySelector('.menu-content').style.maxHeight = item.querySelector('.menu-content').scrollHeight + "px";
     } else {
         item.classList.add('active');
         item.querySelector('.menu-content').style.maxHeight = item.querySelector('.menu-content').scrollHeight + "px";
