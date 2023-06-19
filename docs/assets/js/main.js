@@ -19,7 +19,7 @@ function toggleAccordion(element) {
 
 function highlightPage(element) {
     var items = Array.from(document.querySelectorAll('.menu-item'));
-    var item = element.parentNode.parentNode; // item is the grandparent
+    var item = element.closest('.menu-item'); // Use closest to get the parent menu-item
     items.forEach(function(i) {
         if (item !== i) { // collapse all other sections
             i.classList.remove('active');
@@ -27,10 +27,17 @@ function highlightPage(element) {
         }
     });
 
-    if (!item.classList.contains('active')) { // if the parent section is not active, make it active
+    // Make sure the parent section is active
+    if (!item.classList.contains('active')) {
         item.classList.add('active');
         item.querySelector('.menu-content').style.maxHeight = item.querySelector('.menu-content').scrollHeight + "px";
     }
+
+    // Highlight the current page
+    document.querySelectorAll('.page').forEach(function(page) {
+        page.classList.remove('highlighted');
+    });
+    element.classList.add('highlighted');
 }
 
 // Bind the function to both header and page clicks
