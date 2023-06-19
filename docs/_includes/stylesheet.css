@@ -156,3 +156,21 @@ td, th {
     padding: 4px 8px 4px 8px;
     font-size: 14px;
 }
+
+/* CSS */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-header {
+    cursor: pointer;
+    /* Add more styles as needed */
+}
+
+.accordion-header.active,
+.accordion-content.active {
+    /* Add styles for active state here */
+}
+
