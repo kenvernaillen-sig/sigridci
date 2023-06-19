@@ -1,10 +1,12 @@
-function toggleAccordion(element) {
+function toggleAccordion(element, event) {
     var content = element.nextElementSibling;
     var header = element;
     
     if (element.classList.contains('page')) { // if a sub-header was clicked
         content = element.parentElement; // the parent div.menu-content
         header = content.previousElementSibling; // the preceding div.menu-header
+        event.preventDefault(); // prevent the default link behavior
+        window.location.href = element.href; // manually navigate to the link's href
     }
     
     // hide all menu contents
