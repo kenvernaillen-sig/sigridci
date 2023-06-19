@@ -171,6 +171,7 @@ td, th {
 max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    color: #DFC101;
 }
 
 #accordionMenu .menu-item .menu-content.active {
