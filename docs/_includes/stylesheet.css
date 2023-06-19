@@ -165,11 +165,15 @@ td, th {
 #accordionMenu .menu-item.active .menu-content {
     /* Add your styles for the active content here */
     color: #DFC101;
-    max-height: 0;
+}
+
+#accordionMenu .menu-content {
+max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
 
 #accordionMenu .menu-item .menu-content.active {
     max-height: 500px; /* adjust this value according to your needs */
+    color: #DFC101;
 }
