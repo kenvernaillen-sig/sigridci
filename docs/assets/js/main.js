@@ -1,6 +1,12 @@
-function toggleAccordion(header) {
-    var content = header.nextElementSibling;
-
+function toggleAccordion(element) {
+    var content = element.nextElementSibling;
+    var header = element;
+    
+    if (element.classList.contains('page')) { // if a sub-header was clicked
+        content = element.parentElement; // the parent div.menu-content
+        header = content.previousElementSibling; // the preceding div.menu-header
+    }
+    
     // hide all menu contents
     var allMenuContents = document.querySelectorAll('#accordionMenu .menu-item .menu-content');
     allMenuContents.forEach(function(menuContent) {
@@ -9,7 +15,7 @@ function toggleAccordion(header) {
             menuContent.parentElement.classList.remove('active');
         }
     });
-
+    
     // show or hide the clicked menu content
     if (content.style.maxHeight){
         content.style.maxHeight = null;
