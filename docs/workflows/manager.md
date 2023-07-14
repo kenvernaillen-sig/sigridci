@@ -3,7 +3,7 @@
 As a software portfolio manager, you constantly need access to timely and accurate information about your software portfolio to be well-equipped to make the right decisions. At an average-size company, the software landscape involves many stakeholders spread over different teams, divisions, departments, and even vendors.
 The dynamic portfolio dashboard in Sigrid provides you with insights to stay well-informed about trends and changes in your software.
 
-@@add chart/image
+<img src="../images/manager-workflow.png" width="300" />
 
 When all the application-related data is in place, Sigrid can help you directly pinpoint areas that need action. For newly onboarded systems you can get an indication of the current quality of the application at hand based on the baseline measurements. The next step is to set quality goals based on the system context, such as web accessibility (referred to as deployment type in Sigrid), business criticality and system life cycle. For existing applications, the trend measurement in Sigrid enables you to define team performance patterns that lead to specific actions to improve quality.
 
